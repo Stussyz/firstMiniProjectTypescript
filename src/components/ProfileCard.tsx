@@ -1,7 +1,8 @@
 type ProfileCardType = {
     Name: string;
     Birth: number;
-    Job: string;
+    // for optional value
+    Job?: string;
 };
 
 const ProfileCard = (props: ProfileCardType) => {
@@ -15,7 +16,7 @@ const ProfileCard = (props: ProfileCardType) => {
         <div className = "card">
             <p>Name: {props.Name}</p>
             <p>Birth: {props.Birth}</p>
-            <p>Job: {props.Job}</p>
+            {props.Job ? <p>Job: {props.Job}</p>: null}
         </div>
     );
 };
