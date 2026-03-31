@@ -1,5 +1,5 @@
 function Welcome () {
-    return <h1>Wsup, buddy!</h1>;
+    return <h1>ソフトウェアエンジニア</h1>;
 }
 
 export default Welcome;
