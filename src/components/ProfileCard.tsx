@@ -3,6 +3,7 @@ type ProfileCardType = {
     Birth: number;
     // for optional value
     Job?: string;
+    Key: number;
 };
 
 const ProfileCard = (props: ProfileCardType) => {
