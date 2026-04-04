@@ -2,7 +2,8 @@
 // mengimport component Welcome di dalam component App
 import Welcome from './components/Welcome.tsx'
 import HeaderComp from './components/HeaderComp.tsx'
-import ProfileCard from "./components/ProfileCard.tsx";
+// import ProfileCard from "./components/ProfileCard.tsx";
+import Math from './components/Math.tsx'
 
 type engineer = {
   Name: string;
@@ -36,26 +37,30 @@ const engineers : engineer[] = [
 function App() {
   // mereturn sebuah component jsx
   return (
-  <>
+  <div
+  style = {{
+    padding: "10px 20px"
+  }}>
     <HeaderComp />
     <h1>Learning Typescript</h1>
     {/* bisa pakai tag <div> | <></> | <Fragment></Fragment> */}
-    {/* inline style profileCard */}
-    <div style = {{display: "flex",flexDirection: "row", gap: "5px", justifyContent: "center", alignItems: "center"}}>
+    {/* inline style profileCard: */}
+    {/* <div style = {{display: "flex",flexDirection: "row", gap: "5px", justifyContent: "center", alignItems: "center"}}> */}
 
-      {/* <ProfileCard Name="Ado" Job="Junior Programmer" Birth={2000}/>
+      {/* case 1: pemanggilan value dgn cara biasa: */}
+      {/*<ProfileCard Name="Ado" Job="Junior Programmer" Birth={2000}/>
       <ProfileCard Name="Fadhol" Job="Soldier" Birth={2000}/>
       <ProfileCard Name="Dara" Job="Architect" Birth={2000}/> */}
 
-      {/* pemanggilan value menggunakan array */}
+      {/* case 2: pemanggilan value menggunakan array */}
       {/* {[
         <ProfileCard Name="Ado" Job="Junior Programmer" Birth={2000}/>,
         <ProfileCard Name="Fadhol" Job="Soldier" Birth={2000}/>,
         <ProfileCard Name="Dara" Job="Architect" Birth={2000}/>
         ]}; */}
 
-      {/* BEST WAY: */}
-      {engineers.map((engineer) => {
+      {/* case 3: BEST WAY - pemanggilan value menggunakan maping parameter & property */}
+      {/* {engineers.map((engineer) => {
         return (
           <ProfileCard
             Name={engineer.Name}
@@ -66,12 +71,18 @@ function App() {
           />
         );
       })}
-    </div>
+    </div> */}
 
     {/* memanggil komponen yg ada di Welcome.tsx */}
     {/* menggunakan self closing tag pada Welcome */}
     <Welcome />
-  </>
+
+    {/* STATE: membuat function math + dan - */}
+    {/* case 1: */}
+    <Math />
+    
+  
+  </div>
   );
 }
 
